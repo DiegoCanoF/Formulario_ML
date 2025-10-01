@@ -3,8 +3,8 @@
 =========================== */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
-  color: #f8fafc;
+  background-color: #f5f5f5;
+  color: #333;
   padding: 20px;
   margin: 0;
 }
@@ -19,14 +19,13 @@ h1, h2 {
 }
 
 h1 {
-  font-size: 2.2rem;
-  color: #60a5fa;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
 h2 {
   font-size: 1.4rem;
-  color: #93c5fd;
+  color: #34495e;
   margin-top: 25px;
 }
 
@@ -34,12 +33,15 @@ h2 {
    Contenedor del formulario
 =========================== */
 form {
-  max-width: 850px;
-  margin: auto;
-  background: rgba(30, 41, 59, 0.95);
+  max-width: 800px;
+  margin: 0 auto;
+  background: #ffffff;
   padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 /* ===========================
@@ -47,14 +49,34 @@ form {
 =========================== */
 .instrucciones {
   font-size: 14px;
-  background: rgba(51, 65, 85, 0.9);
+  background: #ecf0f1;
   padding: 12px 15px;
-  border-radius: 10px;
-  margin: 0 auto 25px;
-  max-width: 850px;
+  border-radius: 8px;
+  margin: 0 auto 20px;
+  max-width: 800px;
   line-height: 1.5;
-  color: #e2e8f0;
-  border-left: 4px solid #60a5fa;
+  color: #2c3e50;
+  border-left: 4px solid #3498db;
+}
+
+/* ===========================
+   Guía (tablas de códigos)
+=========================== */
+.guia {
+  font-size: 14px;
+  background: #fdfdfd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  border: 1px solid #dcdcdc;
+  color: #2c3e50;
+}
+
+.guia strong {
+  color: #2980b9;
+  display: block;
+  margin-top: 10px;
 }
 
 /* ===========================
@@ -62,9 +84,9 @@ form {
 =========================== */
 label {
   display: block;
-  margin: 14px 0 6px;
+  margin: 8px 0 5px;
   font-weight: 500;
-  color: #f1f5f9;
+  color: #2c3e50;
 }
 
 input[type="text"],
@@ -72,12 +94,12 @@ input[type="number"],
 textarea {
   width: 100%;
   padding: 10px 12px;
-  border: 1px solid #334155;
-  border-radius: 8px;
-  margin-bottom: 14px;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  margin-bottom: 12px;
   font-size: 15px;
-  background: #0f172a;
-  color: #f8fafc;
+  background: #ffffff;
+  color: #2c3e50;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -85,8 +107,8 @@ input[type="text"]:focus,
 input[type="number"]:focus,
 textarea:focus {
   outline: none;
-  border-color: #60a5fa;
-  box-shadow: 0 0 6px rgba(96, 165, 250, 0.6);
+  border-color: #3498db;
+  box-shadow: 0 0 6px rgba(52, 152, 219, 0.3);
 }
 
 input[type="number"] {
@@ -94,7 +116,7 @@ input[type="number"] {
 }
 
 textarea {
-  min-height: 90px;
+  min-height: 80px;
   resize: vertical;
 }
 
@@ -102,36 +124,106 @@ textarea {
    Ítems
 =========================== */
 .item {
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   padding: 12px;
-  border-radius: 8px;
-  background: rgba(15, 23, 42, 0.6);
+  border-radius: 6px;
+  background: #f7f9fa;
   transition: background 0.2s ease;
 }
 
 .item:hover {
-  background: rgba(15, 23, 42, 0.9);
+  background: #eaeff2;
 }
 
 /* ===========================
    Botón
 =========================== */
 button {
-  background: linear-gradient(90deg, #2563eb, #1d4ed8);
-  color: white;
+  background-color: #3498db;
+  color: #ffffff;
   border: none;
-  padding: 14px 24px;
-  border-radius: 10px;
+  padding: 12px 20px;
+  border-radius: 8px;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
   display: block;
-  margin: 25px auto 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 20px auto 0;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 button:hover {
+  background-color: #2980b9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.5);
 }
-    
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  form {
+    padding: 20px;
+    border-radius: 8px;
+    gap: 12px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 14px;
+    padding: 9px 10px;
+  }
+
+  .guia {
+    font-size: 13px;
+    padding: 12px;
+  }
+
+  button {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  label {
+    font-size: 13px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

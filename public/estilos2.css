@@ -1,0 +1,88 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fondo limpio y centrado */
+body {
+  background: #f9f9f9;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Contenedor */
+.agradecimiento {
+  background: #fff;
+  padding: 40px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Título */
+.agradecimiento h1 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Texto */
+.agradecimiento p {
+  font-size: 1rem;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+/* Botón */
+.agradecimiento button {
+  background: #396de7;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.agradecimiento button:hover {
+  background: #ffffff;
+    color: rgb(0, 0, 0);
+
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .agradecimiento {
+    padding: 30px 20px;
+  }
+
+  .agradecimiento h1 {
+    font-size: 1.5rem;
+  }
+
+  .agradecimiento p {
+    font-size: 0.95rem;
+  }
+
+  .agradecimiento button {
+    width: 100%;
+    padding: 12px;
+  }
+}

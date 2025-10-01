@@ -13,115 +13,164 @@
   </div>
 
   <form id="cuestionario">
-    <h2>Datos Generales</h2>
-    <label>Edad (años):</label>
-    <input type="number" name="edad" required min="1">
+  <h2>Datos Generales</h2>
 
-    <label>Sexo (opcional):</label>
-    <input type="text" name="sexo">
+  <div class="datos-generales">
+    <div class="campo">
+      <label>Edad (años):</label>
+      <input type="number" name="edad" required min="1">
+    </div>
 
-    <label>Escolaridad:</label>
-    <input type="text" name="escolaridad" required>
+    <div class="campo">
+      <label>Sexo (sexo):</label>
+      <div class="codigo-opciones">
+        <p>1 = Masculino</p>
+        <p>2 = Femenino</p>
+        <p>3 = Otro / Prefiero no decir</p>
+      </div>
+      <input type="text" name="sexo">
+    </div>
 
-    <label>Ocupación:</label>
-    <input type="text" name="ocupacion" required>
+    <div class="campo">
+      <label>Escolaridad (escolaridad):</label>
+      <div class="codigo-opciones">
+        <p>1 = Primaria</p>
+        <p>2 = Secundaria</p>
+        <p>3 = Bachillerato/Preparatoria</p>
+        <p>4 = Licenciatura/Técnico</p>
+        <p>5 = Posgrado</p>
+        <p>9 = Otro/No especificado</p>
+      </div>
+      <input type="text" name="escolaridad" required>
+    </div>
 
-    <label>Estatura (cm):</label>
-    <input type="number" name="estatura" required min="30" max="250">
+    <div class="campo">
+      <label>Ocupación (ocupacion):</label>
+      <div class="codigo-opciones">
+        <p>1 = Estudiante</p>
+        <p>2 = Trabajador(a)</p>
+        <p>3 = Desempleado(a)</p>
+        <p>4 = Hogar/Cuidador(a)</p>
+        <p>5 = Jubilado(a)</p>
+        <p>9 = Otro/No especificado</p>
+      </div>
+      <input type="text" name="ocupacion" required>
+    </div>
 
-    <label>Peso (kg):</label>
-    <input type="number" name="peso" required min="10" max="300">
+    <div class="campo">
+      <label>Estatura (cm):</label>
+      <input type="number" name="estatura" required min="30" max="250">
+    </div>
 
-    <label>Horas de sueño promedio:</label>
-    <input type="number" name="sueno" required min="0" max="24">
+    <div class="campo">
+      <label>Peso (kg):</label>
+      <input type="number" name="peso" required min="10" max="300">
+    </div>
 
-    <label>Días/semana con actividad física (≥30 min):</label>
-    <input type="number" name="actividad" required min="0" max="7">
+    <div class="campo">
+      <label>Horas de sueño promedio:</label>
+      <input type="number" name="sueno" required min="0" max="24">
+    </div>
 
-    <h2>Ítems</h2>
-    <div id="items"></div>
+    <div class="campo">
+      <label>Días/semana con actividad física (≥30 min):</label>
+      <input type="number" name="actividad" required min="0" max="7">
+    </div>
+  </div>
 
-    <button type="submit">Enviar</button>
-  </form>
+  <h2>Ítems</h2>
+  <div id="items"></div>
 
-  <script>
-    const items = [
-      "Cumplo mis compromisos a tiempo sin que me recuerden",
-      "Tomo decisiones por mí mismo(a) y asumo sus consecuencias",
-      "Necesito que alguien me diga exactamente qué hacer. (invertida)",
-      "Cuando me enojo o me frustro, recupero la calma con facilidad",
-      "Mis emociones cambian muy rápido y me cuesta controlarlas. (invertida)",
-      "Hago planes para metas a mediano o largo plazo (semanas/meses)",
-      "Me cuesta pensar en las consecuencias futuras de mis actos. (invertida)",
-      "Lo que opina mi grupo de amigos influye mucho en mis decisiones",
-      "Me gusta experimentar cosas nuevas aunque impliquen cierto riesgo",
-      "Obedezco reglas solo si alguien me vigila. (invertida)",
-      "Sigo normas porque entiendo su utilidad",
-      "Prefiero actividades de juego/diversión aunque tenga pendientes",
-      "Puedo dejar el ocio para cumplir una responsabilidad. (invertida)",
-      "Actúo sin pensar cuando algo me emociona. (invertida)",
-      "Evalúo pros y contras antes de tomar decisiones importantes",
-      "Mantengo hábitos de autocuidado (sueño, aseo, alimentación)",
-      "Necesito que me organicen rutinas básicas (tareas, horarios). (invertida)",
-      "Considero cómo afectan mis acciones a otras personas"
-    ];
+  <button type="submit">Enviar</button>
+</form>
 
-    const itemsDiv = document.getElementById("items");
+   <script>
+  const items = [
+    "Cumplo mis compromisos a tiempo sin que me recuerden",
+    "Tomo decisiones por mí mismo(a) y asumo sus consecuencias",
+    "Necesito que alguien me diga exactamente qué hacer. (invertida)",
+    "Cuando me enojo o me frustro, recupero la calma con facilidad",
+    "Mis emociones cambian muy rápido y me cuesta controlarlas. (invertida)",
+    "Hago planes para metas a mediano o largo plazo (semanas/meses)",
+    "Me cuesta pensar en las consecuencias futuras de mis actos. (invertida)",
+    "Lo que opina mi grupo de amigos influye mucho en mis decisiones",
+    "Me gusta experimentar cosas nuevas aunque impliquen cierto riesgo",
+    "Obedezco reglas solo si alguien me vigila. (invertida)",
+    "Sigo normas porque entiendo su utilidad",
+    "Prefiero actividades de juego/diversión aunque tenga pendientes",
+    "Puedo dejar el ocio para cumplir una responsabilidad. (invertida)",
+    "Actúo sin pensar cuando algo me emociona. (invertida)",
+    "Evalúo pros y contras antes de tomar decisiones importantes",
+    "Mantengo hábitos de autocuidado (sueño, aseo, alimentación)",
+    "Necesito que me organicen rutinas básicas (tareas, horarios). (invertida)",
+    "Considero cómo afectan mis acciones a otras personas"
+  ];
 
-    // Crear inputs dinámicos
-    items.forEach((texto, i) => {
-      const div = document.createElement("div");
-      div.classList.add("item");
+  const itemsDiv = document.getElementById("items");
 
-      const label = document.createElement("label");
-      label.textContent = (i + 1) + ") " + texto;
+  // Crear inputs dinámicos
+  items.forEach((texto, i) => {
+    const div = document.createElement("div");
+    div.classList.add("item");
 
-      const input = document.createElement("input");
-      input.type = "text";
-      input.name = "item" + (i + 1);
-      input.required = true;
+    const label = document.createElement("label");
+    label.textContent = (i + 1) + ") " + texto;
 
-      div.appendChild(label);
-      div.appendChild(input);
-      itemsDiv.appendChild(div);
+    // Opciones en una sola línea
+    const opciones = document.createElement("div");
+    opciones.classList.add("opciones");
+    opciones.innerHTML = "• Nunca &nbsp;&nbsp; • Rara vez &nbsp;&nbsp; • A veces &nbsp;&nbsp; • Frecuente &nbsp;&nbsp; • Casi siempre";
+
+    const input = document.createElement("input");
+    input.type = "text";
+    input.name = "item" + (i + 1);
+    input.required = true;
+
+    div.appendChild(label);
+    div.appendChild(opciones);
+    div.appendChild(input);
+    itemsDiv.appendChild(div);
+  });
+
+  // Manejar submit
+  document.getElementById("cuestionario").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const data = {
+      edad: document.querySelector('input[name="edad"]').value,
+      sexo: document.querySelector('input[name="sexo"]').value,
+      escolaridad: document.querySelector('input[name="escolaridad"]').value,
+      ocupacion: document.querySelector('input[name="ocupacion"]').value,
+      estatura: document.querySelector('input[name="estatura"]').value,
+      peso: document.querySelector('input[name="peso"]').value,
+      sueno: document.querySelector('input[name="sueno"]').value,
+      actividad: document.querySelector('input[name="actividad"]').value,
+    };
+
+    // Agregar respuestas de ítems
+    const inputs = document.querySelectorAll("#items input");
+    inputs.forEach((input, i) => {
+      data["item" + (i + 1)] = input.value.trim();
     });
 
-    // Manejar submit
-    document.getElementById("cuestionario").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const data = {
-        edad: document.querySelector('input[name="edad"]').value,
-        sexo: document.querySelector('input[name="sexo"]').value,
-        escolaridad: document.querySelector('input[name="escolaridad"]').value,
-        ocupacion: document.querySelector('input[name="ocupacion"]').value,
-        estatura: document.querySelector('input[name="estatura"]').value,
-        peso: document.querySelector('input[name="peso"]').value,
-        sueno: document.querySelector('input[name="sueno"]').value,
-        actividad: document.querySelector('input[name="actividad"]').value,
-      };
-
-      // Agregar respuestas de ítems
-      const inputs = document.querySelectorAll("#items input");
-      inputs.forEach((input, i) => {
-        data["item" + (i + 1)] = input.value.trim();
-      });
-
-      fetch('/guardar', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(data => {
-        if(data.success) alert("✅ Formulario enviado correctamente");
-        else alert("❌ Error al guardar los datos");
-      })
-      .catch(err => {
-        console.error(err);
-        alert("❌ Error al enviar la solicitud");
-      });
-    });
-  </script>
+    fetch('/guardar', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify(data)
+})
+.then(res => res.json())
+.then(data => {
+  if(data.success) {
+    window.location.href = "gracias.html"; // 👉 Redirige a la página de agradecimiento
+  } else {
+    alert("❌ Error al guardar los datos");
+  }
+})
+.catch(err => {
+  console.error(err);
+  alert("❌ Error al enviar la solicitud");
+});
+  });
+</script>
 </body>
 </html>
